@@ -61,32 +61,6 @@ setInterval(() => {
   document.getElementById("timer").innerText = "⏱ " + time + "s";
 }, 1000);
 
-function loadQuestion() {
-  if (!questions || questions.length === 0) {
-    document.getElementById("question").innerText = "No questions available.";
-    return;
-  }
-
-  document.getElementById("feedback").innerText = "";
-  document.getElementById("solution").innerText = "";
-  document.getElementById("nextBtn").style.display = "none";
-
-  const q = questions[current];
-  document.getElementById("question").innerText =
-    (current + 1) + ". " + q.question;
-
-  const optionsDiv = document.getElementById("options");
-  optionsDiv.innerHTML = "";
-
-  q.options.forEach((opt, i) => {
-    const btn = document.createElement("button");
-    btn.innerText = opt;
-    btn.onclick = () => checkAnswer(i);
-    optionsDiv.appendChild(btn);
-  });
-
-  document.getElementById("progress-bar").style.width =
-    ((current + 1) / questions.length) * 100 + "%";
 }
 
 function checkAnswer(i) {
@@ -154,5 +128,6 @@ function loadQuestion() {
 
 </body>
 </html>
+
 
 
