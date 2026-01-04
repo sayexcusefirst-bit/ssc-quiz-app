@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSC Daily Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <h2>SSC Daily Practice</h2>
+
+  <div class="top-bar">
+    <span id="timer">⏱ 00:00</span>
+    <span id="score">Score: 0</span>
+  </div>
+
+  <div class="progress">
+    <div id="progress-bar"></div>
+  </div>
+
+  <p id="question"></p>
+  <div id="options"></div>
+
+  <div id="feedback"></div>
+  <div id="solution"></div>
+
+  <button id="nextBtn" onclick="nextQuestion()">Next</button>
+</div>
+
+<script src="questions.js"></script>
+<script>
+let current = 0;
+let score = 0;
+let time = 0;
+let timer;
+
+function startTimer() {
+  timer = setInterval(() => {
+    time++;
+    document.getElementById("timer").innerText = "⏱ " + time + "s";
+  }, 1000);
+}
+
+function loadQuestion() {
+  if (current === 0) startTimer();
+
+  document.getElementById("feedback").innerHTML = "";
+  document.getElementById("solution").innerHTML = "";
+  document.getElementById("nextBtn").style.display = "none";
+
+  const q = questions[current];
+  document.getElementById("question").innerText = (current+1)+". "+q.question;
+
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.innerText = opt;
+    btn.onclick = () => checkAnswer(i);
+    optionsDiv.appendChild(btn);
+  });
+
+  document.getElementById("progress-bar").style.width =
+    ((current) / questions.length) * 100 + "%";
+}
+
+function checkAnswer(selected) {
+  const q = questions[current];
+  if (selected === q.answer) {
+    score++;
+    document.getElementById("feedback").innerHTML = "✅ Correct";
+  } else {
+    document.getElementById("feedback").innerHTML = "❌ Wrong";
+  }
+  document.getElementById("score").innerText = "Score: " + score;
+  document.getElementById("solution").innerHTML =
+    "<b>Solution:</b> " + q.solution;
+  document.getElementById("nextBtn").style.display = "block";
+}
+
+function nextQuestion() {
+  current++;
+  if (current < questions.length) {
+    loadQuestion();
+  } else {
+    clearInterval(timer);
+    document.querySelector(".app").innerHTML =
+      `<h2>Quiz Completed 🎉</h2>
+       <p>Final Score: ${score}/${questions.length}</p>
+       <p>Total Time: ${time} seconds</p>`;
+  }
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>

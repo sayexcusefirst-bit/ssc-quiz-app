@@ -1,0 +1,48 @@
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+}
+
+.app {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.progress {
+  background: #ddd;
+  height: 6px;
+  margin-bottom: 15px;
+}
+
+#progress-bar {
+  height: 6px;
+  width: 0%;
+  background: green;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+#feedback {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+#solution {
+  background: #eef2f5;
+  padding: 10px;
+  margin-top: 10px;
+}
