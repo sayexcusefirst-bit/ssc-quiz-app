@@ -114,9 +114,45 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   }
 });
 
-loadQuestion();
+function loadQuestion() {
+  const optionsDiv = document.getElementById("options");
+
+  // ✅ HANDLE EMPTY SUBJECTS PROPERLY
+  if (!questions || questions.length === 0) {
+    document.getElementById("question").innerText =
+      "Questions coming soon for this subject.";
+    optionsDiv.innerHTML = "";
+    document.getElementById("feedback").innerText = "";
+    document.getElementById("solution").innerText = "";
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("progress-bar").style.width = "0%";
+    return;
+  }
+
+  document.getElementById("feedback").innerText = "";
+  document.getElementById("solution").innerText = "";
+  document.getElementById("nextBtn").style.display = "none";
+
+  const q = questions[current];
+  document.getElementById("question").innerText =
+    (current + 1) + ". " + q.question;
+
+  optionsDiv.innerHTML = "";
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.innerText = opt;
+    btn.onclick = () => checkAnswer(i);
+    optionsDiv.appendChild(btn);
+  });
+
+  document.getElementById("progress-bar").style.width =
+    ((current + 1) / questions.length) * 100 + "%";
+}
+
 </script>
 
 </body>
 </html>
+
 
