@@ -12,13 +12,13 @@
   <h2>SSC Daily Practice</h2>
 
   <select id="subjectSelect">
-  <option value="history">History</option>
-  <option value="polity">Polity</option>
-  <option value="geography">Geography</option>
-  <option value="economy">Economy</option>
-  <option value="science">Science</option>
-</select>
-  
+    <option value="history">History</option>
+    <option value="polity">Polity</option>
+    <option value="geography">Geography</option>
+    <option value="economy">Economy</option>
+    <option value="science">Science</option>
+  </select>
+
   <div class="top-bar">
     <span id="timer">⏱ 0s</span>
     <span id="score">Score: 0</span>
@@ -44,8 +44,34 @@ let questions = data[subject];
 let current = 0;
 let score = 0;
 let time = 0;
-let timerStarted = false;
 
+/* ---------- SAVE & LOAD PROGRESS ---------- */
+function saveProgress() {
+  localStorage.setItem("sscQuizProgress", JSON.stringify({
+    subject,
+    current,
+    score,
+    time
+  }));
+}
+
+function loadProgress() {
+  const saved = localStorage.getItem("sscQuizProgress");
+  if (!saved) return;
+
+  const progress = JSON.parse(saved);
+  subject = progress.subject;
+  current = progress.current;
+  score = progress.score;
+  time = progress.time;
+
+  document.getElementById("subjectSelect").value = subject;
+  questions = data[subject];
+  document.getElementById("score").innerText = "Score: " + score;
+}
+/* ---------------------------------------- */
+
+/* ---------- SUBJECT CHANGE ---------- */
 document.getElementById("subjectSelect").addEventListener("change", () => {
   subject = document.getElementById("subjectSelect").value;
   questions = data[subject];
@@ -53,15 +79,18 @@ document.getElementById("subjectSelect").addEventListener("change", () => {
   score = 0;
   time = 0;
   document.getElementById("score").innerText = "Score: 0";
+  saveProgress();
   loadQuestion();
 });
+/* ----------------------------------- */
 
+/* ---------- TIMER ---------- */
 setInterval(() => {
   time++;
   document.getElementById("timer").innerText = "⏱ " + time + "s";
+  saveProgress();
 }, 1000);
-
-}
+/* --------------------------- */
 
 function checkAnswer(i) {
   const q = questions[current];
@@ -74,10 +103,12 @@ function checkAnswer(i) {
   document.getElementById("score").innerText = "Score: " + score;
   document.getElementById("solution").innerText = q.solution;
   document.getElementById("nextBtn").style.display = "block";
+  saveProgress();
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
   current++;
+  saveProgress();
   if (current < questions.length) {
     loadQuestion();
   } else {
@@ -85,13 +116,13 @@ document.getElementById("nextBtn").addEventListener("click", () => {
       `<h2>Quiz Completed 🎉</h2>
        <p>Final Score: ${score}/${questions.length}</p>
        <p>Total Time: ${time} seconds</p>`;
+    localStorage.removeItem("sscQuizProgress");
   }
 });
 
 function loadQuestion() {
   const optionsDiv = document.getElementById("options");
 
-  // ✅ HANDLE EMPTY SUBJECTS PROPERLY
   if (!questions || questions.length === 0) {
     document.getElementById("question").innerText =
       "Questions coming soon for this subject.";
@@ -124,10 +155,11 @@ function loadQuestion() {
     ((current + 1) / questions.length) * 100 + "%";
 }
 
+/* ---------- START APP ---------- */
+loadProgress();
+loadQuestion();
+/* ------------------------------- */
 </script>
 
 </body>
 </html>
-
-
-
