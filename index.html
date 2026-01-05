@@ -151,7 +151,8 @@ document.getElementById("subjectSelect").addEventListener("change", () => {
 /* ----------------------------------- */
 
 /* ---------- TIMER ---------- */
-setInterval(() => {
+const timerInterval = setInterval(() => {
+
   time++;
   document.getElementById("timer").innerText = "⏱ " + time + "s";
   saveProgress();
@@ -241,6 +242,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
