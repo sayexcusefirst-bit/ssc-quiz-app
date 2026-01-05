@@ -387,9 +387,164 @@ const data = {
 
   ],
 
-  polity: [],
+  polity: [
+  {
+    question: "The Preamble to the Indian Constitution was amended by:",
+    options: ["42nd Constitutional Amendment", "44th Constitutional Amendment", "52nd Constitutional Amendment", "73rd Constitutional Amendment"],
+    answer: 0,
+    solution: "The Preamble was amended by the 42nd Amendment Act, 1976."
+  },
+  {
+    question: "Which of the following words was NOT originally present in the Preamble?",
+    options: ["Sovereign", "Secular", "Socialist", "Democratic"],
+    answer: 2,
+    solution: "The words Socialist and Secular were added by the 42nd Amendment."
+  },
+  {
+    question: "The Indian Constitution is borrowed largely from which country?",
+    options: ["USA", "UK", "Ireland", "Canada"],
+    answer: 1,
+    solution: "India borrowed the parliamentary system from the UK."
+  },
+  {
+    question: "Which Article deals with equality before law?",
+    options: ["Article 14", "Article 15", "Article 16", "Article 17"],
+    answer: 0,
+    solution: "Article 14 ensures equality before law."
+  },
+  {
+    question: "Untouchability is abolished under which Article?",
+    options: ["Article 14", "Article 15", "Article 16", "Article 17"],
+    answer: 3,
+    solution: "Article 17 abolishes untouchability."
+  },
+  {
+    question: "Which Fundamental Right is available only to citizens?",
+    options: ["Right to Equality", "Right to Freedom of Religion", "Right against Exploitation", "Right to Constitutional Remedies"],
+    answer: 0,
+    solution: "Right to Equality is available only to citizens."
+  },
+  {
+    question: "The Directive Principles are borrowed from:",
+    options: ["USA", "UK", "Ireland", "Canada"],
+    answer: 2,
+    solution: "Directive Principles are borrowed from the Irish Constitution."
+  },
+  {
+    question: "Which Part of the Constitution contains Directive Principles?",
+    options: ["Part III", "Part IV", "Part V", "Part VI"],
+    answer: 1,
+    solution: "Directive Principles are in Part IV."
+  },
+  {
+    question: "Which Article deals with the Right to Education?",
+    options: ["Article 19", "Article 21", "Article 21A", "Article 22"],
+    answer: 2,
+    solution: "Article 21A provides Right to Education."
+  },
+  {
+    question: "The President of India is elected by:",
+    options: ["People directly", "Members of Parliament", "Elected members of Parliament and State Legislatures", "Union Cabinet"],
+    answer: 2,
+    solution: "The President is elected by elected MPs and MLAs."
+  },
+
+  {
+    question: "The Vice-President of India is the ex-officio Chairman of:",
+    options: ["Lok Sabha", "Rajya Sabha", "Supreme Court", "Election Commission"],
+    answer: 1,
+    solution: "Vice-President is the ex-officio Chairman of Rajya Sabha."
+  },
+  {
+    question: "Maximum strength of Lok Sabha is:",
+    options: ["500", "525", "545", "550"],
+    answer: 3,
+    solution: "Maximum strength of Lok Sabha is 550."
+  },
+  {
+    question: "Who appoints the Chief Election Commissioner?",
+    options: ["Prime Minister", "President", "Chief Justice", "Parliament"],
+    answer: 1,
+    solution: "The Chief Election Commissioner is appointed by the President."
+  },
+  {
+    question: "Which body conducts elections in India?",
+    options: ["Union Public Service Commission", "Election Commission of India", "Planning Commission", "Finance Commission"],
+    answer: 1,
+    solution: "Elections are conducted by the Election Commission of India."
+  },
+  {
+    question: "The tenure of Rajya Sabha is:",
+    options: ["5 years", "6 years", "Permanent body", "4 years"],
+    answer: 2,
+    solution: "Rajya Sabha is a permanent body."
+  },
+
+  {
+    question: "Which Article deals with the impeachment of the President?",
+    options: ["Article 61", "Article 72", "Article 74", "Article 75"],
+    answer: 0,
+    solution: "Article 61 deals with impeachment of the President."
+  },
+  {
+    question: "Who is the real executive authority in India?",
+    options: ["President", "Prime Minister", "Council of Ministers", "Parliament"],
+    answer: 1,
+    solution: "The Prime Minister is the real executive authority."
+  },
+  {
+    question: "Which Amendment reduced voting age from 21 to 18?",
+    options: ["42nd", "44th", "61st", "73rd"],
+    answer: 2,
+    solution: "61st Constitutional Amendment reduced voting age."
+  },
+  {
+    question: "Which Schedule contains Anti-Defection Law?",
+    options: ["8th Schedule", "9th Schedule", "10th Schedule", "11th Schedule"],
+    answer: 2,
+    solution: "Anti-Defection Law is in the 10th Schedule."
+  },
+  {
+    question: "Which body decides disputes regarding election of President?",
+    options: ["Parliament", "Supreme Court", "Election Commission", "High Court"],
+    answer: 1,
+    solution: "Supreme Court decides disputes regarding Presidential election."
+  },
+
+  {
+    question: "Finance Commission is constituted under which Article?",
+    options: ["Article 280", "Article 324", "Article 148", "Article 110"],
+    answer: 0,
+    solution: "Finance Commission is constituted under Article 280."
+  },
+  {
+    question: "Who appoints the Governor of a State?",
+    options: ["Chief Minister", "Prime Minister", "President", "Parliament"],
+    answer: 2,
+    solution: "Governor is appointed by the President."
+  },
+  {
+    question: "The Supreme Court of India was established in:",
+    options: ["1947", "1949", "1950", "1952"],
+    answer: 2,
+    solution: "Supreme Court was established in 1950."
+  },
+  {
+    question: "How many judges are there in the Supreme Court (including CJI)?",
+    options: ["30", "31", "32", "33"],
+    answer: 1,
+    solution: "Supreme Court has 31 judges including the Chief Justice."
+  },
+  {
+    question: "Which Article gives Supreme Court the power of judicial review?",
+    options: ["Article 13", "Article 32", "Article 124", "Article 226"],
+    answer: 0,
+    solution: "Article 13 gives the power of judicial review."
+  }   
+  ],
   geography: [],
   economy: [],
   science: []
 };
+
 
