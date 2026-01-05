@@ -111,7 +111,8 @@ wrong = 0;
 function saveProgress() {
   localStorage.setItem(
     "sscQuizProgress",
-    JSON.stringify({ subject, current, score, time, isPYQ })
+    JSON.stringify({ subject, current, score, time, attempted, wrong, isPYQ })
+
   );
 }
 
@@ -124,6 +125,8 @@ function loadProgress() {
   current = progress.current || 0;
   score = progress.score || 0;
   time = progress.time || 0;
+  attempted = progress.attempted || 0;
+wrong = progress.wrong || 0;
   isPYQ = progress.isPYQ || false;
 
   questions = isPYQ ? data.pyq : data[subject] || [];
@@ -291,6 +294,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
