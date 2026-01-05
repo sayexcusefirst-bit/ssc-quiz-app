@@ -540,11 +540,278 @@ const data = {
     options: ["Article 13", "Article 32", "Article 124", "Article 226"],
     answer: 0,
     solution: "Article 13 gives the power of judicial review."
-  }   
+  } 
+    ,
+{
+  question: "Which Article provides for the protection of languages of minorities?",
+  options: ["Article 29", "Article 30", "Article 31", "Article 32"],
+  answer: 0,
+  solution: "Article 29 protects the interests of minorities by safeguarding their language, script and culture."
+},
+{
+  question: "Which Fundamental Right is suspended during a National Emergency?",
+  options: ["Article 19", "Article 20", "Article 21", "Article 32"],
+  answer: 0,
+  solution: "Only Article 19 is automatically suspended during a National Emergency."
+},
+{
+  question: "Which Article deals with the proclamation of National Emergency?",
+  options: ["Article 352", "Article 356", "Article 360", "Article 365"],
+  answer: 0,
+  solution: "Article 352 deals with National Emergency."
+},
+{
+  question: "Which emergency has been imposed maximum number of times in India?",
+  options: ["National Emergency", "President’s Rule", "Financial Emergency", "State Emergency"],
+  answer: 1,
+  solution: "President’s Rule (Article 356) has been imposed the maximum number of times."
+},
+{
+  question: "Financial Emergency in India has been imposed:",
+  options: ["Once", "Twice", "Never", "Three times"],
+  answer: 2,
+  solution: "Financial Emergency under Article 360 has never been imposed."
+},
+{
+  question: "Which Article empowers the President to impose President’s Rule in a State?",
+  options: ["Article 352", "Article 356", "Article 360", "Article 355"],
+  answer: 1,
+  solution: "Article 356 empowers the President to impose President’s Rule."
+},
+{
+  question: "The Inter-State Council is provided under which Article?",
+  options: ["Article 260", "Article 263", "Article 280", "Article 312"],
+  answer: 1,
+  solution: "Inter-State Council is mentioned under Article 263."
+},
+{
+  question: "Which schedule of the Constitution deals with the division of powers between Union and States?",
+  options: ["7th Schedule", "8th Schedule", "9th Schedule", "10th Schedule"],
+  answer: 0,
+  solution: "The 7th Schedule contains Union, State and Concurrent Lists."
+},
+{
+  question: "Residuary powers in India lie with:",
+  options: ["States", "Union", "Concurrent List", "Supreme Court"],
+  answer: 1,
+  solution: "Residuary powers are with the Union Government."
+},
+{
+  question: "Which Article provides for the appointment of the Prime Minister?",
+  options: ["Article 74", "Article 75", "Article 76", "Article 77"],
+  answer: 1,
+  solution: "Article 75 provides for the appointment of the Prime Minister."
+},
+{
+  question: "Collective responsibility of the Council of Ministers is mentioned in:",
+  options: ["Article 74", "Article 75", "Article 76", "Article 77"],
+  answer: 1,
+  solution: "Collective responsibility is mentioned in Article 75."
+},
+{
+  question: "Who presides over the joint sitting of Parliament?",
+  options: ["President", "Vice-President", "Speaker of Lok Sabha", "Chairman of Rajya Sabha"],
+  answer: 2,
+  solution: "Speaker of Lok Sabha presides over joint sittings."
+},
+{
+  question: "Money Bill can be introduced only in:",
+  options: ["Rajya Sabha", "Lok Sabha", "Joint Sitting", "Either House"],
+  answer: 1,
+  solution: "Money Bill can be introduced only in Lok Sabha."
+},
+{
+  question: "Who certifies a Bill as a Money Bill?",
+  options: ["President", "Prime Minister", "Speaker of Lok Sabha", "Chairman of Rajya Sabha"],
+  answer: 2,
+  solution: "Speaker of Lok Sabha certifies a Money Bill."
+},
+{
+  question: "Which House has more powers in financial matters?",
+  options: ["Rajya Sabha", "Lok Sabha", "Both equal", "State Legislature"],
+  answer: 1,
+  solution: "Lok Sabha has more powers in financial matters."
+},
+{
+  question: "The Estimates Committee is a committee of:",
+  options: ["Rajya Sabha", "Lok Sabha", "Joint Committee", "Finance Commission"],
+  answer: 1,
+  solution: "Estimates Committee is a Lok Sabha committee."
+},
+{
+  question: "The Public Accounts Committee is chaired by:",
+  options: ["Speaker", "Prime Minister", "Opposition Member", "Finance Minister"],
+  answer: 2,
+  solution: "Public Accounts Committee is traditionally chaired by an Opposition member."
+},
+{
+  question: "Who appoints the Attorney General of India?",
+  options: ["Prime Minister", "President", "Chief Justice", "Parliament"],
+  answer: 1,
+  solution: "Attorney General is appointed by the President."
+},
+{
+  question: "The Attorney General can participate in:",
+  options: ["Lok Sabha only", "Rajya Sabha only", "Both Houses", "Neither House"],
+  answer: 2,
+  solution: "Attorney General can participate in proceedings of both Houses."
+},
+{
+  question: "Which Article deals with the Comptroller and Auditor General of India?",
+  options: ["Article 148", "Article 149", "Article 150", "Article 151"],
+  answer: 0,
+  solution: "Article 148 deals with the Comptroller and Auditor General of India."
+},
+{
+  question: "The Union Budget is presented under which Article?",
+  options: ["Article 110", "Article 112", "Article 114", "Article 116"],
+  answer: 1,
+  solution: "Union Budget is presented under Article 112."
+},
+{
+  question: "Which writ is issued to release a person unlawfully detained?",
+  options: ["Mandamus", "Certiorari", "Habeas Corpus", "Quo Warranto"],
+  answer: 2,
+  solution: "Habeas Corpus is issued to release a person unlawfully detained."
+},
+{
+  question: "Which writ is issued against a public office holder illegally occupying office?",
+  options: ["Mandamus", "Quo Warranto", "Certiorari", "Prohibition"],
+  answer: 1,
+  solution: "Quo Warranto questions the authority of a public office holder."
+},
+{
+  question: "Which Fundamental Right is called the ‘heart and soul’ of the Constitution?",
+  options: ["Article 14", "Article 19", "Article 21", "Article 32"],
+  answer: 3,
+  solution: "Article 32 (Right to Constitutional Remedies) was called the heart and soul by Dr. B.R. Ambedkar."
+},
+{
+  question: "Which body is the custodian of the Constitution?",
+  options: ["President", "Parliament", "Supreme Court", "Election Commission"],
+  answer: 2,
+  solution: "Supreme Court is the custodian of the Constitution."
+},
+{
+  question: "Judges of the Supreme Court are removed by:",
+  options: ["President", "Prime Minister", "Parliament", "Chief Justice"],
+  answer: 2,
+  solution: "Judges are removed by Parliament through impeachment."
+},
+{
+  question: "The concept of Judicial Review in India is borrowed from:",
+  options: ["UK", "USA", "Ireland", "France"],
+  answer: 1,
+  solution: "Judicial Review is borrowed from the USA."
+},
+{
+  question: "Which Amendment curtailed the power of Judicial Review?",
+  options: ["24th", "42nd", "44th", "52nd"],
+  answer: 1,
+  solution: "42nd Amendment curtailed the power of Judicial Review."
+},
+{
+  question: "The basic structure doctrine was propounded in which case?",
+  options: ["Golaknath Case", "Kesavananda Bharati Case", "Minerva Mills Case", "Maneka Gandhi Case"],
+  answer: 1,
+  solution: "Basic Structure Doctrine was propounded in Kesavananda Bharati Case."
+},
+{
+  question: "Which Amendment restored Judicial Review after 42nd Amendment?",
+  options: ["43rd", "44th", "52nd", "61st"],
+  answer: 1,
+  solution: "44th Amendment restored Judicial Review."
+},
+{
+  question: "Which Article provides for the formation of new States?",
+  options: ["Article 1", "Article 2", "Article 3", "Article 4"],
+  answer: 2,
+  solution: "Article 3 deals with formation of new States."
+},
+{
+  question: "Which Schedule contains the list of recognised languages?",
+  options: ["7th Schedule", "8th Schedule", "9th Schedule", "10th Schedule"],
+  answer: 1,
+  solution: "8th Schedule contains recognised languages."
+},
+{
+  question: "Which language was added most recently to the 8th Schedule?",
+  options: ["Bodo", "Maithili", "Santhali", "All of these"],
+  answer: 3,
+  solution: "Bodo, Maithili and Santhali were added together."
+},
+{
+  question: "Which body recommends distribution of taxes between Centre and States?",
+  options: ["Planning Commission", "Finance Commission", "NITI Aayog", "Inter-State Council"],
+  answer: 1,
+  solution: "Finance Commission recommends tax distribution."
+},
+{
+  question: "The term of the Finance Commission is:",
+  options: ["3 years", "4 years", "5 years", "6 years"],
+  answer: 2,
+  solution: "Finance Commission is constituted every 5 years."
+},
+{
+  question: "Which body replaced the Planning Commission?",
+  options: ["Finance Commission", "NITI Aayog", "Economic Council", "Inter-State Council"],
+  answer: 1,
+  solution: "NITI Aayog replaced the Planning Commission."
+},
+{
+  question: "Who is the Chairman of NITI Aayog?",
+  options: ["President", "Prime Minister", "Finance Minister", "Vice-President"],
+  answer: 1,
+  solution: "Prime Minister is the Chairman of NITI Aayog."
+},
+{
+  question: "Which Part of the Constitution deals with Panchayati Raj?",
+  options: ["Part IX", "Part X", "Part XI", "Part XII"],
+  answer: 0,
+  solution: "Part IX deals with Panchayati Raj."
+},
+{
+  question: "Which Amendment introduced Panchayati Raj?",
+  options: ["61st", "69th", "73rd", "74th"],
+  answer: 2,
+  solution: "73rd Amendment introduced Panchayati Raj."
+},
+{
+  question: "Which Amendment introduced Municipalities?",
+  options: ["72nd", "73rd", "74th", "75th"],
+  answer: 2,
+  solution: "74th Amendment introduced Municipalities."
+},
+{
+  question: "Who administers the oath to the President of India?",
+  options: ["Prime Minister", "Vice-President", "Chief Justice of India", "Speaker of Lok Sabha"],
+  answer: 2,
+  solution: "Chief Justice of India administers the oath."
+},
+{
+  question: "Which Article provides for Special Status to certain States?",
+  options: ["Article 370", "Article 371", "Article 372", "Article 373"],
+  answer: 1,
+  solution: "Article 371 provides special provisions to certain States."
+},
+{
+  question: "Which body can remove the Vice-President of India?",
+  options: ["Lok Sabha", "Rajya Sabha", "Parliament", "President"],
+  answer: 1,
+  solution: "Vice-President can be removed by Rajya Sabha."
+},
+{
+  question: "Who presides over Rajya Sabha in the absence of Vice-President?",
+  options: ["Prime Minister", "Deputy Chairman", "Speaker", "President"],
+  answer: 1,
+  solution: "Deputy Chairman presides in the absence of Vice-President."
+}
+
   ],
   geography: [],
   economy: [],
   science: []
 };
+
 
 
