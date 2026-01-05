@@ -142,6 +142,8 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
 function loadQuestion() {
   const optionsDiv = document.getElementById("options");
+// Reset options area completely
+document.getElementById("options").innerHTML = "";
 
   if (!questions || questions.length === 0) {
     document.getElementById("question").innerText =
@@ -183,4 +185,5 @@ loadQuestion();
 
 </body>
 </html>
+
 
