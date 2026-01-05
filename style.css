@@ -84,4 +84,17 @@ button:hover {
 .pyq-btn:hover {
   background: #000;
 }
+.analysis {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.analysis p {
+  margin: 6px 0;
+}
+
+.analysis hr {
+  margin: 10px 0;
+}
+
 
