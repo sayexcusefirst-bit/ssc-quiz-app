@@ -81,6 +81,7 @@ document.getElementById("pyqBtn").style.display = "none";
 }
   /* ---------- BACK TO SUBJECT MODE ---------- */
 const backBtn = document.getElementById("backBtn");
+document.getElementById("timer").innerText = "⏱ 0s";
 
 if (backBtn) {
   backBtn.addEventListener("click", () => {
@@ -243,7 +244,7 @@ document.querySelector(".app").innerHTML = `
       }
     </p>
 
-    <button onclick="location.reload()">🔁 Practice Again</button>
+   <button onclick="location.reload()">🏠 Back to Home</button>
   </div>
 `;
 
@@ -294,6 +295,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
