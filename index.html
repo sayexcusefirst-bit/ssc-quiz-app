@@ -46,6 +46,8 @@ let questions = data[subject] || [];
 let current = 0;
 let score = 0;
 let time = 0;
+let attempted = 0;
+let wrong = 0;
 let isPYQ = false;
 
 /* ---------- PYQ MODE ---------- */
@@ -63,6 +65,8 @@ if (pyqBtn) {
     current = 0;
     score = 0;
     time = 0;
+attempted = 0;
+wrong = 0;
 
     document.getElementById("score").innerText = "Score: 0";
     document.getElementById("progress-bar").style.width = "0%";
@@ -87,6 +91,8 @@ if (backBtn) {
     current = 0;
     score = 0;
     time = 0;
+attempted = 0;
+wrong = 0;
 
     document.getElementById("subjectSelect").style.display = "block";
     document.getElementById("backBtn").style.display = "none";
@@ -141,6 +147,8 @@ document.getElementById("subjectSelect").addEventListener("change", () => {
   current = 0;
   score = 0;
   time = 0;
+attempted = 0;
+wrong = 0;
 
   document.getElementById("score").innerText = "Score: 0";
   document.getElementById("subjectSelect").style.display = "block";
@@ -171,12 +179,15 @@ function checkAnswer(selectedIndex) {
       btn.style.backgroundColor = "#ffcdd2";
   });
 
-  if (selectedIndex === q.answer) {
-    score++;
-    document.getElementById("feedback").innerText = "✅ Correct";
-  } else {
-    document.getElementById("feedback").innerText = "❌ Wrong";
-  }
+ attempted++;
+
+if (selectedIndex === q.answer) {
+  score++;
+  document.getElementById("feedback").innerText = "✅ Correct";
+} else {
+  wrong++;
+  document.getElementById("feedback").innerText = "❌ Wrong";
+}
 
   document.getElementById("score").innerText = "Score: " + score;
   document.getElementById("solution").innerText = q.solution;
@@ -192,12 +203,49 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   if (current < questions.length) {
     loadQuestion();
   } else {
-    document.querySelector(".app").innerHTML = `
-      <h2>Quiz Completed 🎉</h2>
-      <p>Final Score: ${score}/${questions.length}</p>
-      <p>Total Time: ${time} seconds</p>`;
-    localStorage.removeItem("sscQuizProgress");
-  }
+ const total = questions.length;
+const skipped = total - attempted;
+const accuracy = attempted
+  ? ((score / attempted) * 100).toFixed(2)
+  : 0;
+
+const minutes = Math.floor(time / 60);
+const seconds = time % 60;
+
+document.querySelector(".app").innerHTML = `
+  <h2>📊 Result Analysis</h2>
+
+  <div class="analysis">
+    <p><strong>Total Questions:</strong> ${total}</p>
+    <p><strong>Attempted:</strong> ${attempted}</p>
+    <p><strong>Correct:</strong> ${score}</p>
+    <p><strong>Wrong:</strong> ${wrong}</p>
+    <p><strong>Skipped:</strong> ${skipped}</p>
+
+    <hr>
+
+    <p><strong>Accuracy:</strong> ${accuracy}%</p>
+    <p><strong>Time Taken:</strong> ${minutes} min ${seconds} sec</p>
+
+    <hr>
+
+    <p><strong>Performance Level:</strong></p>
+    <p>
+      ${
+        accuracy >= 75
+          ? "🟢 Excellent"
+          : accuracy >= 50
+          ? "🟡 Average"
+          : "🔴 Needs Improvement"
+      }
+    </p>
+
+    <button onclick="location.reload()">🔁 Practice Again</button>
+  </div>
+`;
+
+localStorage.removeItem("sscQuizProgress");
+
 });
 
 function loadQuestion() {
@@ -242,6 +290,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
