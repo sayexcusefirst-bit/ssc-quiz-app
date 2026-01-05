@@ -42,9 +42,20 @@
 
 <script src="questions.js"></script>
 <script>
-/* ----------------- GLOBALS ----------------- */
+/* ============ DOM ELEMENTS ============ */
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const feedbackEl = document.getElementById("feedback");
+const solutionEl = document.getElementById("solution");
+const nextBtn = document.getElementById("nextBtn");
+const scoreEl = document.getElementById("score");
+const timerEl = document.getElementById("timer");
+const progressBar = document.getElementById("progress-bar");
+const subjectSelect = document.getElementById("subjectSelect");
+
+/* ============ STATE ============ */
 let subject = "history";
-let questions = [];
+let questions = data[subject] || [];
 let current = 0;
 let score = 0;
 let time = 0;
@@ -52,60 +63,14 @@ let attempted = 0;
 let wrong = 0;
 let isPYQ = false;
 
-/* ----------------- PYQ MODE ----------------- */
-document.getElementById("pyqBtn").addEventListener("click", () => {
-  if (!data.pyq || data.pyq.length === 0) {
-    alert("PYQ questions coming soon.");
-    return;
-  }
-
-  isPYQ = true;
-  subject = "pyq";
-  questions = data.pyq;
-  resetStats();
-
-  document.getElementById("subjectSelect").style.display = "none";
-  document.getElementById("backBtn").style.display = "block";
-  document.getElementById("pyqBtn").style.display = "none";
-
-  saveProgress();
-  loadQuestion();
-});
-
-/* -------------- BACK TO SUBJECT ------------- */
-document.getElementById("backBtn").addEventListener("click", () => {
-  isPYQ = false;
-  subject = "history";
-  questions = data[subject] || [];
-  resetStats();
-
-  document.getElementById("subjectSelect").style.display = "block";
-  document.getElementById("backBtn").style.display = "none";
-  document.getElementById("pyqBtn").style.display = "block";
-
-  saveProgress();
-  loadQuestion();
-});
-
-/* ---------------- SUBJECT CHANGE ------------ */
-document.getElementById("subjectSelect").addEventListener("change", () => {
-  isPYQ = false;
-  subject = subjectSelect.value;
-  questions = data[subject] || [];
-  resetStats();
-
-  saveProgress();
-  loadQuestion();
-});
-
-/* ----------------- TIMER -------------------- */
-const timerInterval = setInterval(() => {
+/* ============ TIMER ============ */
+setInterval(() => {
   time++;
-  document.getElementById("timer").innerText = "⏱ " + time + "s";
+  timerEl.innerText = "⏱ " + time + "s";
   saveProgress();
 }, 1000);
 
-/* ---------------- SAVE / LOAD --------------- */
+/* ============ SAVE / LOAD ============ */
 function saveProgress() {
   localStorage.setItem("sscQuizProgress", JSON.stringify({
     subject, current, score, time, attempted, wrong, isPYQ
@@ -117,39 +82,33 @@ function loadProgress() {
   if (!saved) return;
 
   const p = JSON.parse(saved);
-
   isPYQ = p.isPYQ;
   subject = p.subject || "history";
-  questions = isPYQ ? (data.pyq || []) : (data[subject] || []);
-
+  questions = isPYQ ? data.pyq : data[subject];
   current = p.current || 0;
   score = p.score || 0;
   time = p.time || 0;
   attempted = p.attempted || 0;
   wrong = p.wrong || 0;
 
-  document.getElementById("score").innerText = "Score: " + score;
+  scoreEl.innerText = "Score: " + score;
   subjectSelect.value = subject;
-
-  document.getElementById("subjectSelect").style.display = isPYQ ? "none" : "block";
-  document.getElementById("backBtn").style.display = isPYQ ? "block" : "none";
-  document.getElementById("pyqBtn").style.display = isPYQ ? "none" : "block";
 }
 
-/* ---------------- RESET --------------------- */
+/* ============ RESET ============ */
 function resetStats() {
   current = 0;
   score = 0;
   time = 0;
   attempted = 0;
   wrong = 0;
-  document.getElementById("score").innerText = "Score: 0";
+  scoreEl.innerText = "Score: 0";
 }
 
-/* ---------------- ANSWER -------------------- */
+/* ============ ANSWER ============ */
 function checkAnswer(selected) {
   const q = questions[current];
-  const buttons = document.querySelectorAll("#options button");
+  const buttons = optionsEl.querySelectorAll("button");
 
   buttons.forEach((btn, i) => {
     btn.disabled = true;
@@ -160,37 +119,33 @@ function checkAnswer(selected) {
   attempted++;
   if (selected === q.answer) {
     score++;
-    feedback.innerText = "✅ Correct";
+    feedbackEl.innerText = "✅ Correct";
   } else {
     wrong++;
-    feedback.innerText = "❌ Wrong";
+    feedbackEl.innerText = "❌ Wrong";
   }
 
-  solution.innerText = q.solution || "";
+  solutionEl.innerText = q.solution || "";
   scoreEl.innerText = "Score: " + score;
   nextBtn.style.display = "block";
 
   saveProgress();
 }
 
-/* ---------------- NEXT ---------------------- */
+/* ============ NEXT ============ */
 nextBtn.addEventListener("click", () => {
   current++;
   saveProgress();
   loadQuestion();
 });
 
-/* -------------- LOAD QUESTION --------------- */
+/* ============ LOAD QUESTION ============ */
 function loadQuestion() {
-  const optionsDiv = document.getElementById("options");
-  optionsDiv.innerHTML = "";
+  optionsEl.innerHTML = "";
+  nextBtn.style.display = "none";
 
-  if (!Array.isArray(questions) || questions.length === 0) {
-    question.innerText = "No questions available for this subject.";
-    feedback.innerText = "";
-    solution.innerText = "";
-    nextBtn.style.display = "none";
-    progressBar.style.width = "0%";
+  if (!questions || questions.length === 0) {
+    questionEl.innerText = "No questions available.";
     return;
   }
 
@@ -202,25 +157,26 @@ function loadQuestion() {
   }
 
   const q = questions[current];
-  question.innerText = (current + 1) + ". " + q.question;
+  questionEl.innerText = `${current + 1}. ${q.question}`;
 
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
     btn.innerText = opt;
     btn.onclick = () => checkAnswer(i);
-    optionsDiv.appendChild(btn);
+    optionsEl.appendChild(btn);
   });
 
-  feedback.innerText = "";
-  solution.innerText = "";
-  nextBtn.style.display = "none";
+  feedbackEl.innerText = "";
+  solutionEl.innerText = "";
   progressBar.style.width = ((current + 1) / questions.length) * 100 + "%";
 }
 
-/* ---------------- START --------------------- */
+/* ============ START ============ */
 loadProgress();
 loadQuestion();
 </script>
 
+
 </body>
 </html>
+
