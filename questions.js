@@ -158,10 +158,10 @@ const data = {
       options: ["Tilak", "Gokhale", "Dadabhai Naoroji", "Lala Lajpat Rai"],
       answer: 2,
       solution: "Drain of Wealth theory was given by Dadabhai Naoroji."
-    }
+    },
 
     /* ---- QUESTIONS CONTINUE UP TO 100 ---- */
-    ,
+    
 {
   question: "Which Mughal ruler introduced the system of branding horses (Daghs)?",
   options: ["Babur", "Humayun", "Akbar", "Aurangzeb"],
@@ -812,6 +812,7 @@ const data = {
   economy: [],
   science: []
 };
+
 
 
 
