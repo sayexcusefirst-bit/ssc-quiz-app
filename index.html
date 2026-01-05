@@ -119,28 +119,47 @@ function saveProgress() {
 
 function loadProgress() {
   const saved = localStorage.getItem("sscQuizProgress");
-  if (!saved) return;
+  if (!saved) {
+    // Fresh start
+    subject = "history";
+    questions = data[subject] || [];
+    current = 0;
+    score = 0;
+    time = 0;
+    attempted = 0;
+    wrong = 0;
+    isPYQ = false;
+    return;
+  }
 
   const progress = JSON.parse(saved);
-  subject = progress.subject || "history";
-  current = progress.current || 0;
+
+  // ✅ Validate subject
+  if (progress.isPYQ && Array.isArray(data.pyq) && data.pyq.length > 0) {
+    isPYQ = true;
+    subject = "pyq";
+    questions = data.pyq;
+  } else {
+    isPYQ = false;
+    subject = data[progress.subject] ? progress.subject : "history";
+    questions = data[subject] || [];
+  }
+
+  // ✅ Clamp values safely
+  current = Math.min(progress.current || 0, questions.length - 1);
   score = progress.score || 0;
   time = progress.time || 0;
   attempted = progress.attempted || 0;
-wrong = progress.wrong || 0;
-  isPYQ = progress.isPYQ || false;
-
-  questions = isPYQ ? data.pyq : data[subject] || [];
+  wrong = progress.wrong || 0;
 
   document.getElementById("score").innerText = "Score: " + score;
   document.getElementById("subjectSelect").value = subject;
-  document.getElementById("subjectSelect").style.display =
-    isPYQ ? "none" : "block";
-document.getElementById("backBtn").style.display = isPYQ ? "block" : "none";
-document.getElementById("pyqBtn").style.display = isPYQ ? "none" : "block";
 
-
+  document.getElementById("subjectSelect").style.display = isPYQ ? "none" : "block";
+  document.getElementById("backBtn").style.display = isPYQ ? "block" : "none";
+  document.getElementById("pyqBtn").style.display = isPYQ ? "none" : "block";
 }
+
 /* ---------------------------------------- */
 
 /* ---------- SUBJECT CHANGE ---------- */
@@ -295,6 +314,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
