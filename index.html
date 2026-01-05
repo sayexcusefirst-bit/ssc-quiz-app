@@ -39,21 +39,46 @@
 </div>
 
 <script src="questions.js"></script>
+<script src="questions.js"></script>
 <script>
 let subject = "history";
-let questions = data[subject];
+let questions = data[subject] || [];
 let current = 0;
 let score = 0;
 let time = 0;
+let isPYQ = false;
+
+/* ---------- PYQ MODE ---------- */
+const pyqBtn = document.getElementById("pyqBtn");
+if (pyqBtn) {
+  pyqBtn.addEventListener("click", () => {
+    if (!data.pyq || data.pyq.length === 0) {
+      alert("PYQ questions coming soon.");
+      return;
+    }
+
+    isPYQ = true;
+    subject = "pyq";
+    questions = data.pyq;
+    current = 0;
+    score = 0;
+    time = 0;
+
+    document.getElementById("score").innerText = "Score: 0";
+    document.getElementById("subjectSelect").style.display = "none";
+
+    saveProgress();
+    loadQuestion();
+  });
+}
+/* -------------------------------- */
 
 /* ---------- SAVE & LOAD PROGRESS ---------- */
 function saveProgress() {
-  localStorage.setItem("sscQuizProgress", JSON.stringify({
-    subject,
-    current,
-    score,
-    time
-  }));
+  localStorage.setItem(
+    "sscQuizProgress",
+    JSON.stringify({ subject, current, score, time, isPYQ })
+  );
 }
 
 function loadProgress() {
@@ -61,25 +86,33 @@ function loadProgress() {
   if (!saved) return;
 
   const progress = JSON.parse(saved);
-  subject = progress.subject;
-  current = progress.current;
-  score = progress.score;
-  time = progress.time;
+  subject = progress.subject || "history";
+  current = progress.current || 0;
+  score = progress.score || 0;
+  time = progress.time || 0;
+  isPYQ = progress.isPYQ || false;
 
-  document.getElementById("subjectSelect").value = subject;
-  questions = data[subject];
+  questions = isPYQ ? data.pyq : data[subject] || [];
+
   document.getElementById("score").innerText = "Score: " + score;
+  document.getElementById("subjectSelect").value = subject;
+  document.getElementById("subjectSelect").style.display =
+    isPYQ ? "none" : "block";
 }
 /* ---------------------------------------- */
 
 /* ---------- SUBJECT CHANGE ---------- */
 document.getElementById("subjectSelect").addEventListener("change", () => {
+  isPYQ = false;
   subject = document.getElementById("subjectSelect").value;
-  questions = data[subject];
+  questions = data[subject] || [];
   current = 0;
   score = 0;
   time = 0;
+
   document.getElementById("score").innerText = "Score: 0";
+  document.getElementById("subjectSelect").style.display = "block";
+
   saveProgress();
   loadQuestion();
 });
@@ -92,27 +125,19 @@ setInterval(() => {
   saveProgress();
 }, 1000);
 /* --------------------------- */
+
 function checkAnswer(selectedIndex) {
   const q = questions[current];
   const optionsDiv = document.getElementById("options");
   const buttons = optionsDiv.querySelectorAll("button");
 
-  // 🔒 Disable all buttons after first click
   buttons.forEach((btn, index) => {
     btn.disabled = true;
-
-    // Highlight correct answer
-    if (index === q.answer) {
-      btn.style.backgroundColor = "#c8e6c9"; // green
-    }
-
-    // Highlight wrong selected answer
-    if (index === selectedIndex && index !== q.answer) {
-      btn.style.backgroundColor = "#ffcdd2"; // red
-    }
+    if (index === q.answer) btn.style.backgroundColor = "#c8e6c9";
+    if (index === selectedIndex && index !== q.answer)
+      btn.style.backgroundColor = "#ffcdd2";
   });
 
-  // Update score and feedback
   if (selectedIndex === q.answer) {
     score++;
     document.getElementById("feedback").innerText = "✅ Correct";
@@ -124,32 +149,31 @@ function checkAnswer(selectedIndex) {
   document.getElementById("solution").innerText = q.solution;
   document.getElementById("nextBtn").style.display = "block";
 
-  saveProgress(); // keep progress safe
+  saveProgress();
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
   current++;
   saveProgress();
+
   if (current < questions.length) {
     loadQuestion();
   } else {
-    document.querySelector(".app").innerHTML =
-      `<h2>Quiz Completed 🎉</h2>
-       <p>Final Score: ${score}/${questions.length}</p>
-       <p>Total Time: ${time} seconds</p>`;
+    document.querySelector(".app").innerHTML = `
+      <h2>Quiz Completed 🎉</h2>
+      <p>Final Score: ${score}/${questions.length}</p>
+      <p>Total Time: ${time} seconds</p>`;
     localStorage.removeItem("sscQuizProgress");
   }
 });
 
 function loadQuestion() {
   const optionsDiv = document.getElementById("options");
-// Reset options area completely
-document.getElementById("options").innerHTML = "";
+  optionsDiv.innerHTML = "";
 
-  if (!questions || questions.length === 0) {
+  if (!questions || questions.length === 0 || current >= questions.length) {
     document.getElementById("question").innerText =
       "Questions coming soon for this subject.";
-    optionsDiv.innerHTML = "";
     document.getElementById("feedback").innerText = "";
     document.getElementById("solution").innerText = "";
     document.getElementById("nextBtn").style.display = "none";
@@ -165,8 +189,6 @@ document.getElementById("options").innerHTML = "";
   document.getElementById("question").innerText =
     (current + 1) + ". " + q.question;
 
-  optionsDiv.innerHTML = "";
-
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
     btn.innerText = opt;
@@ -181,11 +203,13 @@ document.getElementById("options").innerHTML = "";
 /* ---------- START APP ---------- */
 loadProgress();
 loadQuestion();
-/* ------------------------------- */
+/* -------------------------------- */
 </script>
+
 
 </body>
 </html>
+
 
 
 
