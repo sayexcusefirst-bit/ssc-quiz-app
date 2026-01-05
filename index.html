@@ -73,6 +73,30 @@ document.getElementById("pyqBtn").style.display = "none";
     loadQuestion();
   });
 }
+  /* ---------- BACK TO SUBJECT MODE ---------- */
+const backBtn = document.getElementById("backBtn");
+
+if (backBtn) {
+  backBtn.addEventListener("click", () => {
+    isPYQ = false;
+
+    subject = "history";
+    questions = data[subject] || [];
+    current = 0;
+    score = 0;
+    time = 0;
+
+    document.getElementById("subjectSelect").style.display = "block";
+    document.getElementById("backBtn").style.display = "none";
+    document.getElementById("pyqBtn").style.display = "block";
+    document.getElementById("score").innerText = "Score: 0";
+
+    saveProgress();
+    loadQuestion();
+  });
+}
+/* ---------------------------------------- */
+
 /* -------------------------------- */
 
 /* ---------- SAVE & LOAD PROGRESS ---------- */
@@ -211,6 +235,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
