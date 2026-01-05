@@ -120,6 +120,41 @@ subjectSelect.addEventListener("change", () => {
   saveProgress();
   loadQuestion();
 });
+/* ============ PYQ MODE ============ */
+document.getElementById("pyqBtn").addEventListener("click", () => {
+  if (!data.pyq || data.pyq.length === 0) {
+    alert("PYQ questions coming soon.");
+    return;
+  }
+
+  isPYQ = true;
+  subject = "pyq";
+  questions = data.pyq;
+
+  resetStats();
+
+  subjectSelect.style.display = "none";
+  document.getElementById("backBtn").style.display = "block";
+  document.getElementById("pyqBtn").style.display = "none";
+
+  saveProgress();
+  loadQuestion();
+});
+/* ============ BACK TO SUBJECT MODE ============ */
+document.getElementById("backBtn").addEventListener("click", () => {
+  isPYQ = false;
+  subject = "history";
+  questions = data[subject] || [];
+
+  resetStats();
+
+  subjectSelect.style.display = "block";
+  document.getElementById("backBtn").style.display = "none";
+  document.getElementById("pyqBtn").style.display = "block";
+
+  saveProgress();
+  loadQuestion();
+});
 
 /* ============ ANSWER ============ */
 function checkAnswer(selected) {
@@ -195,5 +230,6 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
