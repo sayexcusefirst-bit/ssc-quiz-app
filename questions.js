@@ -384,6 +384,37 @@ const data = {
   answer: 2,
   solution: "Cabinet Mission came to India in 1946."
 }
+,
+{
+  question: "Who was the first Mughal ruler to introduce Persian as the court language?",
+  options: ["Babur", "Humayun", "Akbar", "Jahangir"],
+  answer: 1,
+  solution: "Humayun introduced Persian as the court language of the Mughal Empire."
+},
+{
+  question: "Which Mughal emperor issued the Mahzar?",
+  options: ["Babur", "Humayun", "Akbar", "Aurangzeb"],
+  answer: 2,
+  solution: "Akbar issued the Mahzar, asserting his authority in religious matters."
+},
+{
+  question: "Who founded the city of Agra?",
+  options: ["Babur", "Sikandar Lodi", "Akbar", "Ibrahim Lodi"],
+  answer: 1,
+  solution: "Sikandar Lodi founded the city of Agra."
+},
+{
+  question: "Which Mughal ruler introduced the practice of weighing himself against gold?",
+  options: ["Akbar", "Jahangir", "Shah Jahan", "Aurangzeb"],
+  answer: 1,
+  solution: "Jahangir introduced the practice of weighing himself against gold."
+},
+{
+  question: "Which Mughal ruler built Buland Darwaza?",
+  options: ["Babur", "Humayun", "Akbar", "Shah Jahan"],
+  answer: 2,
+  solution: "Buland Darwaza was built by Akbar to commemorate his victory over Gujarat."
+}
 
   ],
 
@@ -812,6 +843,7 @@ const data = {
   economy: [],
   science: []
 };
+
 
 
 
