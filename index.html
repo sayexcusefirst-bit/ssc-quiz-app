@@ -276,7 +276,21 @@ function loadQuestion() {
   const optionsDiv = document.getElementById("options");
   optionsDiv.innerHTML = "";
 
-  if (!questions || questions.length === 0 || current >= questions.length) {
+ if (!Array.isArray(questions) || questions.length === 0) {
+  document.getElementById("question").innerText =
+    "No questions available. Please select another subject.";
+  document.getElementById("options").innerHTML = "";
+  document.getElementById("feedback").innerText = "";
+  document.getElementById("solution").innerText = "";
+  document.getElementById("nextBtn").style.display = "none";
+  document.getElementById("progress-bar").style.width = "0%";
+  return;
+}
+
+if (current >= questions.length) {
+  current = 0; // 🔥 reset instead of blank screen
+}
+
     document.getElementById("question").innerText =
       "Questions coming soon for this subject.";
     document.getElementById("feedback").innerText = "";
@@ -314,6 +328,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
