@@ -91,19 +91,39 @@ setInterval(() => {
   saveProgress();
 }, 1000);
 /* --------------------------- */
-
-function checkAnswer(i) {
+function checkAnswer(selectedIndex) {
   const q = questions[current];
-  if (i === q.answer) {
+  const optionsDiv = document.getElementById("options");
+  const buttons = optionsDiv.querySelectorAll("button");
+
+  // 🔒 Disable all buttons after first click
+  buttons.forEach((btn, index) => {
+    btn.disabled = true;
+
+    // Highlight correct answer
+    if (index === q.answer) {
+      btn.style.backgroundColor = "#c8e6c9"; // green
+    }
+
+    // Highlight wrong selected answer
+    if (index === selectedIndex && index !== q.answer) {
+      btn.style.backgroundColor = "#ffcdd2"; // red
+    }
+  });
+
+  // Update score and feedback
+  if (selectedIndex === q.answer) {
     score++;
     document.getElementById("feedback").innerText = "✅ Correct";
   } else {
     document.getElementById("feedback").innerText = "❌ Wrong";
   }
+
   document.getElementById("score").innerText = "Score: " + score;
   document.getElementById("solution").innerText = q.solution;
   document.getElementById("nextBtn").style.display = "block";
-  saveProgress();
+
+  saveProgress(); // keep progress safe
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
@@ -163,3 +183,4 @@ loadQuestion();
 
 </body>
 </html>
+
