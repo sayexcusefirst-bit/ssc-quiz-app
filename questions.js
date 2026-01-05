@@ -1,35 +1,3 @@
-data.pyq = [
-  {
-    question: "Who introduced Permanent Settlement in India? (SSC 2019)",
-    options: ["Warren Hastings", "Lord Cornwallis", "Lord Dalhousie", "Lord Wellesley"],
-    answer: 1,
-    solution: "Permanent Settlement was introduced by Lord Cornwallis in 1793."
-  },
-  {
-    question: "The Preamble of Indian Constitution was adopted on: (SSC 2020)",
-    options: ["26 Jan 1950", "15 Aug 1947", "26 Nov 1949", "2 Oct 1949"],
-    answer: 2,
-    solution: "The Constitution was adopted on 26 November 1949."
-  },
-  {
-    question: "Who was the first Governor-General of independent India? (SSC 2018)",
-    options: ["Rajendra Prasad", "C. Rajagopalachari", "Lord Mountbatten", "Jawaharlal Nehru"],
-    answer: 2,
-    solution: "Lord Mountbatten was the first Governor-General of independent India."
-  },
-  {
-    question: "Which Article is known as the heart and soul of the Constitution? (SSC 2021)",
-    options: ["Article 14", "Article 19", "Article 21", "Article 32"],
-    answer: 3,
-    solution: "Article 32 was called the heart and soul by Dr. B.R. Ambedkar."
-  },
-  {
-    question: "The Battle of Plassey was fought in: (SSC 2017)",
-    options: ["1757", "1764", "1761", "1773"],
-    answer: 0,
-    solution: "Battle of Plassey was fought in 1757."
-  }
-];
 const data = {
   history: [
     {
@@ -875,6 +843,38 @@ const data = {
   economy: [],
   science: []
 };
+data.pyq = [
+  {
+    question: "Who introduced Permanent Settlement in India? (SSC 2019)",
+    options: ["Warren Hastings", "Lord Cornwallis", "Lord Dalhousie", "Lord Wellesley"],
+    answer: 1,
+    solution: "Permanent Settlement was introduced by Lord Cornwallis in 1793."
+  },
+  {
+    question: "The Preamble of Indian Constitution was adopted on: (SSC 2020)",
+    options: ["26 Jan 1950", "15 Aug 1947", "26 Nov 1949", "2 Oct 1949"],
+    answer: 2,
+    solution: "The Constitution was adopted on 26 November 1949."
+  },
+  {
+    question: "Who was the first Governor-General of independent India? (SSC 2018)",
+    options: ["Rajendra Prasad", "C. Rajagopalachari", "Lord Mountbatten", "Jawaharlal Nehru"],
+    answer: 2,
+    solution: "Lord Mountbatten was the first Governor-General of independent India."
+  },
+  {
+    question: "Which Article is known as the heart and soul of the Constitution? (SSC 2021)",
+    options: ["Article 14", "Article 19", "Article 21", "Article 32"],
+    answer: 3,
+    solution: "Article 32 was called the heart and soul by Dr. B.R. Ambedkar."
+  },
+  {
+    question: "The Battle of Plassey was fought in: (SSC 2017)",
+    options: ["1757", "1764", "1761", "1773"],
+    answer: 0,
+    solution: "Battle of Plassey was fought in 1757."
+  }
+];
 
 
 
