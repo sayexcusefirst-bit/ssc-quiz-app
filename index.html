@@ -104,6 +104,22 @@ function resetStats() {
   wrong = 0;
   scoreEl.innerText = "Score: 0";
 }
+/* ============ SUBJECT CHANGE ============ */
+subjectSelect.addEventListener("change", () => {
+  isPYQ = false;
+
+  subject = subjectSelect.value;
+  questions = data[subject] || [];
+
+  resetStats();
+
+  document.getElementById("pyqBtn").style.display = "block";
+  document.getElementById("backBtn").style.display = "none";
+  subjectSelect.style.display = "block";
+
+  saveProgress();
+  loadQuestion();
+});
 
 /* ============ ANSWER ============ */
 function checkAnswer(selected) {
@@ -179,4 +195,5 @@ loadQuestion();
 
 </body>
 </html>
+
 
