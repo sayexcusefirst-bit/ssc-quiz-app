@@ -70,3 +70,18 @@ button:hover {
   margin-top: 10px;
   border-radius: 8px;
 }
+.pyq-btn {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.pyq-btn:hover {
+  background: #000;
+}
+
