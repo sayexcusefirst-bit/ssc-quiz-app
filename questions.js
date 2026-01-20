@@ -873,97 +873,99 @@ data.pyq = [
     options: ["1757", "1764", "1761", "1773"],
     answer: 0,
     solution: "Battle of Plassey was fought in 1757."
+  },
+  {
+    question: "Who wrote Arthashastra? (SSC CGL 2022)",
+    options: ["Kalidasa", "Chanakya", "Vishakhadatta", "Banabhatta"],
+    answer: 1,
+    solution: "Arthashastra was written by Chanakya (Kautilya)."
+  },
+  {
+    question: "Which Schedule of the Constitution deals with languages? (SSC CGL 2021)",
+    options: ["Eighth Schedule", "Seventh Schedule", "Tenth Schedule", "Twelfth Schedule"],
+    answer: 0,
+    solution: "The Eighth Schedule lists the official languages of India."
+  },
+  {
+    question: "The Subsidiary Alliance was introduced by: (SSC 2020)",
+    options: ["Lord Dalhousie", "Lord Wellesley", "Lord Cornwallis", "Warren Hastings"],
+    answer: 1,
+    solution: "Subsidiary Alliance was introduced by Lord Wellesley."
+  },
+  {
+    question: "Which river is known as the Sorrow of Bengal? (SSC CHSL 2019)",
+    options: ["Damodar", "Hooghly", "Kosi", "Teesta"],
+    answer: 0,
+    solution: "Damodar river is called the Sorrow of Bengal."
+  },
+  {
+    question: "Who was the first Indian Chief Justice of India? (SSC CGL 2018)",
+    options: ["H.J. Kania", "B.K. Mukherjea", "M. Patanjali Sastri", "S.R. Das"],
+    answer: 0,
+    solution: "Justice H.J. Kania was the first Chief Justice of India."
+  },
+  {
+    question: "The Simon Commission was appointed in which year? (SSC 2021)",
+    options: ["1925", "1927", "1929", "1931"],
+    answer: 1,
+    solution: "The Simon Commission was appointed in 1927."
+  },
+  {
+    question: "Which movement started with Dandi March? (SSC 2020)",
+    options: ["Non-Cooperation", "Civil Disobedience", "Quit India", "Swadeshi"],
+    answer: 1,
+    solution: "The Civil Disobedience Movement began with the Dandi March."
+  },
+  {
+    question: "Which gas is used in the preparation of bleaching powder? (SSC CHSL 2019)",
+    options: ["Oxygen", "Chlorine", "Hydrogen", "Nitrogen"],
+    answer: 1,
+    solution: "Bleaching powder is prepared using chlorine gas."
+  },
+  {
+    question: "Who presided over the Constituent Assembly? (SSC CGL 2022)",
+    options: ["Dr. Rajendra Prasad", "Jawaharlal Nehru", "Dr. B.R. Ambedkar", "Sardar Patel"],
+    answer: 0,
+    solution: "Dr. Rajendra Prasad was the President of the Constituent Assembly."
+  },
+  {
+    question: "Which soil is best for cotton cultivation? (SSC 2020)",
+    options: ["Alluvial soil", "Red soil", "Black soil", "Laterite soil"],
+    answer: 2,
+    solution: "Black soil is ideal for cotton cultivation."
+  },
+  {
+    question: "Who introduced Ryotwari System in India? (SSC 2019)",
+    options: ["Lord Cornwallis", "Thomas Munro", "Lord Dalhousie", "Warren Hastings"],
+    answer: 1,
+    solution: "The Ryotwari system was introduced by Thomas Munro."
+  },
+  {
+    question: "Which Fundamental Right cannot be suspended during Emergency? (SSC CGL 2021)",
+    options: ["Article 14", "Article 19", "Article 21", "Article 32"],
+    answer: 2,
+    solution: "Article 21 cannot be suspended even during Emergency."
+  },
+  {
+    question: "The capital of Maurya Empire under Ashoka was: (SSC 2018)",
+    options: ["Pataliputra", "Ujjain", "Taxila", "Vaishali"],
+    answer: 0,
+    solution: "Pataliputra was the capital of Maurya Empire."
+  },
+  {
+    question: "Which vitamin helps in blood clotting? (SSC CHSL 2020)",
+    options: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"],
+    answer: 3,
+    solution: "Vitamin K helps in blood clotting."
+  },
+  {
+    question: "Who gave the slogan 'Jai Jawan Jai Kisan'? (SSC CGL 2019)",
+    options: ["Jawaharlal Nehru", "Lal Bahadur Shastri", "Indira Gandhi", "Rajiv Gandhi"],
+    answer: 1,
+    solution: "The slogan was given by Lal Bahadur Shastri."
   }
-{
-  question: "Who wrote Arthashastra? (SSC CGL 2022)",
-  options: ["Kalidasa", "Chanakya", "Vishakhadatta", "Banabhatta"],
-  answer: 1,
-  solution: "Arthashastra was written by Chanakya (Kautilya)."
-},
-{
-  question: "Which Schedule of the Constitution deals with languages? (SSC CGL 2021)",
-  options: ["Eighth Schedule", "Seventh Schedule", "Tenth Schedule", "Twelfth Schedule"],
-  answer: 0,
-  solution: "The Eighth Schedule lists the official languages of India."
-},
-{
-  question: "The Subsidiary Alliance was introduced by: (SSC 2020)",
-  options: ["Lord Dalhousie", "Lord Wellesley", "Lord Cornwallis", "Warren Hastings"],
-  answer: 1,
-  solution: "Subsidiary Alliance was introduced by Lord Wellesley."
-},
-{
-  question: "Which river is known as the Sorrow of Bengal? (SSC CHSL 2019)",
-  options: ["Damodar", "Hooghly", "Kosi", "Teesta"],
-  answer: 0,
-  solution: "Damodar river is called the Sorrow of Bengal."
-},
-{
-  question: "Who was the first Indian Chief Justice of India? (SSC CGL 2018)",
-  options: ["H.J. Kania", "B.K. Mukherjea", "M. Patanjali Sastri", "S.R. Das"],
-  answer: 0,
-  solution: "Justice H.J. Kania was the first Chief Justice of India."
-},
-{
-  question: "The Simon Commission was appointed in which year? (SSC 2021)",
-  options: ["1925", "1927", "1929", "1931"],
-  answer: 1,
-  solution: "The Simon Commission was appointed in 1927."
-},
-{
-  question: "Which movement started with Dandi March? (SSC 2020)",
-  options: ["Non-Cooperation", "Civil Disobedience", "Quit India", "Swadeshi"],
-  answer: 1,
-  solution: "The Civil Disobedience Movement began with the Dandi March."
-},
-{
-  question: "Which gas is used in the preparation of bleaching powder? (SSC CHSL 2019)",
-  options: ["Oxygen", "Chlorine", "Hydrogen", "Nitrogen"],
-  answer: 1,
-  solution: "Bleaching powder is prepared using chlorine gas."
-},
-{
-  question: "Who presided over the Constituent Assembly? (SSC CGL 2022)",
-  options: ["Dr. Rajendra Prasad", "Jawaharlal Nehru", "Dr. B.R. Ambedkar", "Sardar Patel"],
-  answer: 0,
-  solution: "Dr. Rajendra Prasad was the President of the Constituent Assembly."
-},
-{
-  question: "Which soil is best for cotton cultivation? (SSC 2020)",
-  options: ["Alluvial soil", "Red soil", "Black soil", "Laterite soil"],
-  answer: 2,
-  solution: "Black soil is ideal for cotton cultivation."
-},
-{
-  question: "Who introduced Ryotwari System in India? (SSC 2019)",
-  options: ["Lord Cornwallis", "Thomas Munro", "Lord Dalhousie", "Warren Hastings"],
-  answer: 1,
-  solution: "The Ryotwari system was introduced by Thomas Munro."
-},
-{
-  question: "Which Fundamental Right cannot be suspended during Emergency? (SSC CGL 2021)",
-  options: ["Article 14", "Article 19", "Article 21", "Article 32"],
-  answer: 2,
-  solution: "Article 21 cannot be suspended even during Emergency."
-},
-{
-  question: "The capital of Maurya Empire under Ashoka was: (SSC 2018)",
-  options: ["Pataliputra", "Ujjain", "Taxila", "Vaishali"],
-  answer: 0,
-  solution: "Pataliputra was the capital of Maurya Empire."
-},
-{
-  question: "Which vitamin helps in blood clotting? (SSC CHSL 2020)",
-  options: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"],
-  answer: 3,
-  solution: "Vitamin K helps in blood clotting."
-},
-{
-  question: "Who gave the slogan 'Jai Jawan Jai Kisan'? (SSC CGL 2019)",
-  options: ["Jawaharlal Nehru", "Lal Bahadur Shastri", "Indira Gandhi", "Rajiv Gandhi"],
-  answer: 1,
-  solution: "The slogan was given by Lal Bahadur Shastri."
-}
+];
+
 
 
 
