@@ -875,6 +875,202 @@ data.pyq = [
     solution: "Battle of Plassey was fought in 1757."
   }
 ];
+{
+  year: "2022",
+  exam: "SSC CGL Tier 1",
+  question: "Who among the following introduced the Permanent Settlement in India?",
+  options: [
+    "Lord Cornwallis",
+    "Lord Wellesley",
+    "Lord Dalhousie",
+    "Warren Hastings"
+  ],
+  answer: 0,
+  solution: "Permanent Settlement was introduced by Lord Cornwallis in 1793."
+},
+{
+  year: "2021",
+  exam: "SSC CGL Tier 1",
+  question: "Which Fundamental Right is available only to citizens of India?",
+  options: [
+    "Right to Equality",
+    "Right against Exploitation",
+    "Right to Freedom of Religion",
+    "Right to Constitutional Remedies"
+  ],
+  answer: 0,
+  solution: "Right to Equality (Articles 14–18) is available only to citizens."
+},
+{
+  year: "2020",
+  exam: "SSC CGL Tier 1",
+  question: "The Battle of Plassey was fought in which year?",
+  options: [
+    "1757",
+    "1764",
+    "1761",
+    "1748"
+  ],
+  answer: 0,
+  solution: "The Battle of Plassey was fought in 1757 between the British and Siraj-ud-Daulah."
+},
+{
+  year: "2022",
+  exam: "SSC CHSL",
+  question: "Which latitude passes almost through the middle of India?",
+  options: [
+    "Equator",
+    "Tropic of Cancer",
+    "Tropic of Capricorn",
+    "Arctic Circle"
+  ],
+  answer: 1,
+  solution: "The Tropic of Cancer passes almost through the middle of India."
+},
+{
+  year: "2021",
+  exam: "SSC CGL Tier 1",
+  question: "Who was the first President of India?",
+  options: [
+    "Dr. Rajendra Prasad",
+    "Dr. S. Radhakrishnan",
+    "Jawaharlal Nehru",
+    "B. R. Ambedkar"
+  ],
+  answer: 0,
+  solution: "Dr. Rajendra Prasad was the first President of India."
+},
+{
+  year: "2020",
+  exam: "SSC CHSL",
+  question: "Which river is known as the 'Sorrow of Bihar'?",
+  options: [
+    "Ganga",
+    "Kosi",
+    "Son",
+    "Gandak"
+  ],
+  answer: 1,
+  solution: "The Kosi river is known as the Sorrow of Bihar due to frequent floods."
+},
+{
+  year: "2022",
+  exam: "SSC CGL Tier 1",
+  question: "Which Schedule of the Indian Constitution deals with allocation of seats in Rajya Sabha?",
+  options: [
+    "Fourth Schedule",
+    "Fifth Schedule",
+    "Sixth Schedule",
+    "Seventh Schedule"
+  ],
+  answer: 0,
+  solution: "The Fourth Schedule deals with allocation of seats in the Rajya Sabha."
+},
+{
+  year: "2021",
+  exam: "SSC CGL Tier 1",
+  question: "Who founded the Indian National Congress?",
+  options: [
+    "A. O. Hume",
+    "Dadabhai Naoroji",
+    "Bal Gangadhar Tilak",
+    "Gopal Krishna Gokhale"
+  ],
+  answer: 0,
+  solution: "Indian National Congress was founded by A. O. Hume in 1885."
+},
+{
+  year: "2020",
+  exam: "SSC CHSL",
+  question: "Which gas is most abundant in the Earth's atmosphere?",
+  options: [
+    "Oxygen",
+    "Carbon Dioxide",
+    "Nitrogen",
+    "Hydrogen"
+  ],
+  answer: 2,
+  solution: "Nitrogen constitutes about 78% of Earth's atmosphere."
+},
+{
+  year: "2022",
+  exam: "SSC CGL Tier 1",
+  question: "Which Mughal emperor wrote his autobiography?",
+  options: [
+    "Akbar",
+    "Babur",
+    "Humayun",
+    "Jahangir"
+  ],
+  answer: 1,
+  solution: "Babur wrote his autobiography known as Baburnama."
+},
+{
+  year: "2021",
+  exam: "SSC CGL Tier 1",
+  question: "Which Article of the Constitution deals with Emergency Provisions?",
+  options: [
+    "Article 352–360",
+    "Article 324",
+    "Article 280",
+    "Article 110"
+  ],
+  answer: 0,
+  solution: "Articles 352 to 360 deal with Emergency Provisions."
+},
+{
+  year: "2020",
+  exam: "SSC CHSL",
+  question: "Which vitamin is produced when human skin is exposed to sunlight?",
+  options: [
+    "Vitamin A",
+    "Vitamin B",
+    "Vitamin C",
+    "Vitamin D"
+  ],
+  answer: 3,
+  solution: "Vitamin D is synthesized in the skin when exposed to sunlight."
+},
+{
+  year: "2022",
+  exam: "SSC CGL Tier 1",
+  question: "Who was the last Governor-General of independent India?",
+  options: [
+    "Lord Mountbatten",
+    "C. Rajagopalachari",
+    "Jawaharlal Nehru",
+    "Rajendra Prasad"
+  ],
+  answer: 1,
+  solution: "C. Rajagopalachari was the last Governor-General of independent India."
+},
+{
+  year: "2021",
+  exam: "SSC CGL Tier 1",
+  question: "Which movement is associated with the slogan 'Do or Die'?",
+  options: [
+    "Non-Cooperation Movement",
+    "Civil Disobedience Movement",
+    "Quit India Movement",
+    "Swadeshi Movement"
+  ],
+  answer: 2,
+  solution: "The slogan 'Do or Die' was given during the Quit India Movement."
+},
+{
+  year: "2020",
+  exam: "SSC CHSL",
+  question: "Which metal is liquid at room temperature?",
+  options: [
+    "Iron",
+    "Mercury",
+    "Aluminium",
+    "Copper"
+  ],
+  answer: 1,
+  solution: "Mercury is the only metal that is liquid at room temperature."
+}
+
 
 
 
