@@ -13,14 +13,16 @@
 
   <button id="pyqBtn" class="pyq-btn">📜 PYQ MODE</button>
   <button id="backBtn" class="back-btn" style="display:none;">⬅ Back to Subjects</button>
+  
+<select id="subjectSelect">
+  <option value="history">History</option>
+  <option value="polity">Polity</option>
+  <option value="geography">Geography</option>
+  <option value="economy">Economy</option>
+  <option value="science">Science</option>
+  <option value="english">English (RC)</option>
+</select>
 
-  <select id="subjectSelect">
-    <option value="history">History</option>
-    <option value="polity">Polity</option>
-    <option value="geography">Geography</option>
-    <option value="economy">Economy</option>
-    <option value="science">Science</option>
-  </select>
 
   <div class="top-bar">
     <span id="timer">⏱ 0s</span>
@@ -230,6 +232,7 @@ loadQuestion();
 
 </body>
 </html>
+
 
 
 
