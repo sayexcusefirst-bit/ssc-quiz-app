@@ -875,9 +875,8 @@ const data = {
         answer: 2,
         solution: "The passage is informative."
       }
-      ]
-  }
-    
+   ]
+  }   
 ],
  
 geography: [],
@@ -1008,6 +1007,7 @@ data.pyq = [
     solution: "The slogan was given by Lal Bahadur Shastri."
   }
 ];
+
 
 
 
