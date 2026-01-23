@@ -878,6 +878,7 @@ const data = {
       }
       ]
   }
+    
 ],
  
 geography: [],
@@ -1008,6 +1009,7 @@ data.pyq = [
     solution: "The slogan was given by Lal Bahadur Shastri."
   }
 ];
+
 
 
 
