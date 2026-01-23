@@ -871,9 +871,11 @@ english: [
     solution: "The passage gives information about the importance of education."
   }
 ],
+  
 geography: [],
 economy: [],
 science: []
+  
 };
 
 data.pyq = [
@@ -998,6 +1000,7 @@ data.pyq = [
     solution: "The slogan was given by Lal Bahadur Shastri."
   }
 ];
+
 
 
 
