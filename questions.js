@@ -842,7 +842,7 @@ const data = {
   geography: [],
   economy: [],
   science: [],
-  english: [data.english = [
+  english: [
 {
   question: "Read the passage:\n\nEducation is not merely the acquisition of knowledge but the development of the ability to think rationally. It shapes character, builds confidence and enables individuals to contribute meaningfully to society. A nation that ignores education risks falling behind in progress and innovation.\n\nQ1. What is education mainly described as in the passage?",
   options: ["Learning facts", "Getting degrees", "Developing rational thinking", "Earning money"],
@@ -998,6 +998,7 @@ data.pyq = [
     solution: "The slogan was given by Lal Bahadur Shastri."
   }
 ];
+
 
 
 
