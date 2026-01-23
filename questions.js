@@ -839,38 +839,44 @@ const data = {
 }
 
   ],
-english: [
+  english: [
   {
-    question: "Read the passage:\n\nEducation is not merely the acquisition of knowledge but the development of the ability to think rationally. It shapes character, builds confidence and enables individuals to contribute meaningfully to society. A nation that ignores education risks falling behind in progress and innovation.\n\nQ1. What is education mainly described as in the passage?",
-    options: ["Learning facts", "Getting degrees", "Developing rational thinking", "Earning money"],
-    answer: 2,
-    solution: "The passage says education is not just acquiring knowledge but developing the ability to think rationally."
-  },
-  {
-    question: "Read the passage above.\n\nQ2. According to the passage, education helps in:",
-    options: ["Earning more money", "Building character and confidence", "Political power", "Physical strength"],
-    answer: 1,
-    solution: "The passage states that education shapes character and builds confidence."
-  },
-  {
-    question: "Read the passage.\n\nQ3. What happens if a nation ignores education?",
-    options: ["It becomes rich", "It progresses faster", "It falls behind in progress", "It becomes powerful"],
-    answer: 2,
-    solution: "The passage clearly says that a nation risks falling behind in progress and innovation."
-  },
-  {
-    question: "Read the passage.\n\nQ4. The word 'innovation' in the passage is closest in meaning to:",
-    options: ["Tradition", "New ideas", "Failure", "Rules"],
-    answer: 1,
-    solution: "Innovation means introducing new ideas or methods."
-  },
-  {
-    question: "Read the passage.\n\nQ5. What is the tone of the passage?",
-    options: ["Critical", "Humorous", "Informative", "Emotional"],
-    answer: 2,
-    solution: "The passage gives information about the importance of education."
-  }
+    type: "rc",
+    passage: "Education is not merely the acquisition of knowledge but the development of the ability to think rationally. It shapes character, builds confidence and enables individuals to contribute meaningfully to society. A nation that ignores education risks falling behind in progress and innovation.",
+
+    questions: [
+      {
+        question: "What is education mainly described as?",
+        options: ["Learning facts", "Getting degrees", "Developing rational thinking", "Earning money"],
+        answer: 2,
+        solution: "The passage says education is not just acquiring knowledge but developing rational thinking."
+      },
+      {
+        question: "According to the passage, education helps in:",
+        options: ["Earning more money", "Building character and confidence", "Political power", "Physical strength"],
+        answer: 1,
+        solution: "It shapes character and builds confidence."
+      },
+      {
+        question: "What happens if a nation ignores education?",
+        options: ["It becomes rich", "It progresses faster", "It falls behind in progress", "It becomes powerful"],
+        answer: 2,
+        solution: "It risks falling behind in progress and innovation."
+      },
+      {
+        question: "The word 'innovation' means:",
+        options: ["Tradition", "New ideas", "Failure", "Rules"],
+        answer: 1,
+        solution: "Innovation means new ideas or methods."
+      },
+      {
+        question: "The tone of the passage is:",
+        options: ["Critical", "Humorous", "Informative", "Emotional"],
+        answer: 2,
+        solution: "The passage is informative."
+      }
 ],
+
   
 geography: [],
 economy: [],
@@ -1000,6 +1006,7 @@ data.pyq = [
     solution: "The slogan was given by Lal Bahadur Shastri."
   }
 ];
+
 
 
 
