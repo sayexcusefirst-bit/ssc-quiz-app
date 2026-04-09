@@ -33,6 +33,7 @@ Return ONLY JSON like:
     });
 
     const data = await response.json();
+    console.log("FULL AI RESPONSE:", JSON.stringify(data));
     const text = data?.choices?.[0]?.message?.content;
 
     if (!text) throw new Error("No AI response");
