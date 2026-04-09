@@ -42,10 +42,13 @@
   <button id="nextBtn" style="display:none;">Next</button>
 </div>
 
-<script async function loadQuestionsFromAPI(subject) {
+<script>
+/* ========= API FUNCTION ========= */
+async function loadQuestionsFromAPI(subject) {
   const res = await fetch("https://ssc-quiz-app-production.up.railway.app/questions?subject=" + subject);
   return await res.json();
-}>
+}
+
 /* ============ DOM ELEMENTS ============ */
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
@@ -59,105 +62,36 @@ const subjectSelect = document.getElementById("subjectSelect");
 
 /* ============ STATE ============ */
 let subject = "history";
-let questions = await loadQuestionsFromAPI(subject);
+let questions = [];
 let current = 0;
 let score = 0;
 let time = 0;
-let attempted = 0;
-let wrong = 0;
-let isPYQ = false;
 
 /* ============ TIMER ============ */
 setInterval(() => {
   time++;
   timerEl.innerText = "⏱ " + time + "s";
-  saveProgress();
 }, 1000);
 
-/* ============ SAVE / LOAD ============ */
-function saveProgress() {
-  localStorage.setItem("sscQuizProgress", JSON.stringify({
-    subject, current, score, time, attempted, wrong, isPYQ
-  }));
+/* ============ LOAD QUESTIONS ============ */
+async function startQuiz() {
+  questionEl.innerText = "Loading questions...";
+  
+  try {
+    questions = await loadQuestionsFromAPI(subject);
+    current = 0;
+    score = 0;
+    scoreEl.innerText = "Score: 0";
+    loadQuestion();
+  } catch (e) {
+    questionEl.innerText = "⚠️ Failed to load questions";
+  }
 }
 
-function loadProgress() {
-  const saved = localStorage.getItem("sscQuizProgress");
-  if (!saved) return;
-
-  const p = JSON.parse(saved);
-  isPYQ = p.isPYQ;
-  subject = p.subject || "history";
-  questions = isPYQ ? data.pyq : data[subject];
-  current = p.current || 0;
-  score = p.score || 0;
-  time = p.time || 0;
-  attempted = p.attempted || 0;
-  wrong = p.wrong || 0;
-
-  scoreEl.innerText = "Score: " + score;
-  subjectSelect.value = subject;
-}
-
-/* ============ RESET ============ */
-function resetStats() {
-  current = 0;
-  score = 0;
-  time = 0;
-  attempted = 0;
-  wrong = 0;
-  scoreEl.innerText = "Score: 0";
-}
 /* ============ SUBJECT CHANGE ============ */
 subjectSelect.addEventListener("change", async () => {
-  isPYQ = false;
-
   subject = subjectSelect.value;
-  questions = data[subject] || [];
-
-  resetStats();
-
-  document.getElementById("pyqBtn").style.display = "block";
-  document.getElementById("backBtn").style.display = "none";
-  subjectSelect.style.display = "block";
-
-  saveProgress();
-  loadQuestion();
-});
-/* ============ PYQ MODE ============ */
-document.getElementById("pyqBtn").addEventListener("click", () => {
-  if (!data.pyq || data.pyq.length === 0) {
-    alert("PYQ questions coming soon.");
-    return;
-  }
-
-  isPYQ = true;
-  subject = "pyq";
-  questions = data.pyq;
-
-  resetStats();
-
-  subjectSelect.style.display = "none";
-  document.getElementById("backBtn").style.display = "block";
-  document.getElementById("pyqBtn").style.display = "none";
-
-  saveProgress();
-  loadQuestion();
-});
-/* ============ BACK TO SUBJECT MODE ============ */
-document.getElementById("backBtn").addEventListener("click", () => {
-  isPYQ = false;
-  subject = "history";
-  questions = data[subject] || [];
-
-  resetStats();
-
-  subjectSelect.style.display = "block";
-  document.getElementById("backBtn").style.display = "none";
-  document.getElementById("pyqBtn").style.display = "block";
-
-  saveProgress();
-  loadQuestion();
+  startQuiz();
 });
 
 /* ============ ANSWER ============ */
@@ -171,26 +105,20 @@ function checkAnswer(selected) {
     if (i === selected && i !== q.answer) btn.style.background = "#ffcdd2";
   });
 
-  attempted++;
   if (selected === q.answer) {
     score++;
     feedbackEl.innerText = "✅ Correct";
   } else {
-    wrong++;
     feedbackEl.innerText = "❌ Wrong";
   }
 
-  solutionEl.innerText = q.solution || "";
   scoreEl.innerText = "Score: " + score;
   nextBtn.style.display = "block";
-
-  saveProgress();
 }
 
 /* ============ NEXT ============ */
 nextBtn.addEventListener("click", () => {
   current++;
-  saveProgress();
   loadQuestion();
 });
 
@@ -205,9 +133,7 @@ function loadQuestion() {
   }
 
   if (current >= questions.length) {
-    alert("Quiz Completed 🎉");
-    localStorage.removeItem("sscQuizProgress");
-    location.reload();
+    questionEl.innerText = "🎉 Quiz Completed!";
     return;
   }
 
@@ -227,13 +153,8 @@ function loadQuestion() {
 }
 
 /* ============ START ============ */
-async function init() {
-  loadProgress();
-  questions = await loadQuestionsFromAPI(subject);
-  loadQuestion();
-}
-
-init();
+startQuiz();
+</script>
 </script>
 
 
