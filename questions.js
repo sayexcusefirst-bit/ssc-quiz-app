@@ -840,7 +840,7 @@ const data = {
 
   ],
   
-  English: [
+  EnglishRC : [
   {
     passage: "Education is not merely the acquisition of knowledge but the development of the ability to think rationally. It shapes character, builds confidence and enables individuals to contribute meaningfully to society. A nation that ignores education risks falling behind in progress and innovation.",
 
