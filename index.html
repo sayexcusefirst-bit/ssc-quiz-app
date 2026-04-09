@@ -42,8 +42,10 @@
   <button id="nextBtn" style="display:none;">Next</button>
 </div>
 
-<script src="questions.js"></script>
-<script>
+<script async function loadQuestionsFromAPI(subject) {
+  const res = await fetch("https://ssc-quiz-app-production.up.railway.app/questions?subject=" + subject);
+  return await res.json();
+}>
 /* ============ DOM ELEMENTS ============ */
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
@@ -57,7 +59,7 @@ const subjectSelect = document.getElementById("subjectSelect");
 
 /* ============ STATE ============ */
 let subject = "history";
-let questions = data[subject] || [];
+let questions = await loadQuestionsFromAPI(subject);
 let current = 0;
 let score = 0;
 let time = 0;
@@ -107,7 +109,7 @@ function resetStats() {
   scoreEl.innerText = "Score: 0";
 }
 /* ============ SUBJECT CHANGE ============ */
-subjectSelect.addEventListener("change", () => {
+subjectSelect.addEventListener("change", async () => {
   isPYQ = false;
 
   subject = subjectSelect.value;
@@ -225,8 +227,13 @@ function loadQuestion() {
 }
 
 /* ============ START ============ */
-loadProgress();
-loadQuestion();
+async function init() {
+  loadProgress();
+  questions = await loadQuestionsFromAPI(subject);
+  loadQuestion();
+}
+
+init();
 </script>
 
 
