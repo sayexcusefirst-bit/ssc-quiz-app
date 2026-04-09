@@ -13,28 +13,25 @@ app.get("/questions", async (req, res) => {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "llama3-8b-8192",
-        messages: [
-          {
-            role: "user",
-            content: `Generate 5 SSC exam MCQs on ${subject}.
-Return ONLY JSON.
-No markdown.
-Format:
+      content: `Generate exactly 5 SSC exam multiple choice questions on ${subject}.
+
+Rules:
+- Each question must have 4 options
+- Only one correct answer
+- Answer must be index number (0,1,2,3)
+
+STRICTLY return ONLY valid JSON.
+DO NOT write any text before or after.
+DO NOT use markdown.
+
+Example format:
 [
   {
-    "question": "text",
-    "options": ["A","B","C","D"],
+    "question": "Who was Akbar?",
+    "options": ["King", "Scientist", "Doctor", "Teacher"],
     "answer": 0
   }
 ]`
-          }
-        ]
-      })
-    });
 
     const data = await response.json();
     const text = data?.choices?.[0]?.message?.content;
