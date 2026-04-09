@@ -13,17 +13,14 @@ app.get("/questions", async (req, res) => {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "llama3-8b-8192",
-        messages: [
-          {
-            role: "user",
-            content: `Generate 5 SSC MCQs on ${subject}.
-Return ONLY JSON like:
+        content: `Generate 5 SSC MCQs on ${subject}.
+Return ONLY valid JSON.
+Do NOT use markdown.
+Do NOT add explanation.
+
+Format strictly:
 [
- { "question": "...", "options": ["A","B","C","D"], "answer": "A" }
+ { "question": "text", "options": ["A","B","C","D"], "answer": "A" }
 ]`
           }
         ]
@@ -33,7 +30,14 @@ Return ONLY JSON like:
     const data = await response.json();
     const text = data.choices[0].message.content;
 
-    res.json(JSON.parse(text));
+    try {
+  const cleaned = text.replace(/```json|```/g, "").trim();
+  const parsed = JSON.parse(cleaned);
+  res.json(parsed);
+} catch (e) {
+  console.error("JSON Parse Error:", text);
+  res.status(500).json({ error: "Invalid JSON from AI", raw: text });
+}
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch questions" });
   }
