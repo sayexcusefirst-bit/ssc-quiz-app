@@ -18,7 +18,7 @@ app.get("/questions", async (req, res) => {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
-  model: "llama3-8b-8192",
+  model: "llama3-8b-8192-q4_0",
     messages: [
       {
         role: "user",
