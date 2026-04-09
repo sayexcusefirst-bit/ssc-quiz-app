@@ -13,7 +13,7 @@ app.get("/questions", async (req, res) => {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
-      content: `Generate 5 SSC exam level MCQs on ${subject}.
+      content: `Generate 10 SSC CGL exam level MCQs on ${subject}.
 
 Each question must have:
 - Clear question
